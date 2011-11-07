@@ -26,8 +26,8 @@ section > header.slide > h1 {
 }
 
 html {
-	background: black url(../img/rainbow-wood.jpg) bottom center;
-	background-size: cover;
+	background: black url(../img/white-tile.png);
+	/* background-size: cover; */
 }
 
 body {
