@@ -1,5 +1,6 @@
-# CSSS
-### CSS-based SlideShow System
+# Slides from my presentation on the WordPress Initialization process
 
-Warning: Only works in latest Firefox, Opera, Safari or Chrome.
-For more information, see the [sample slideshow](http://leaverou.me/csss/sample-slideshow.html) 
+This repo contains the slides used during my talk at the WPNYC meetup on
+11/15/2011.
+
+
