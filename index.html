@@ -52,7 +52,30 @@
 	
 	<section class="slide">
 		<h2>index.php</h2>
-		<p>Slide content</p>
+    <li class="delayed">
+      <code>WP_USE_THEMES</code>
+      <p>Tells WordPress that your site should use the active theme to display the pages it’s serving.</p>
+    </li>
+    <li class="delayed">
+      <code>wp-blog-header.php</code>
+      <p>Checks to see if the variable $wp_did_header is set to true and if not continues the boot process.</p>
+    </li>
+	</section>
+
+	<section class="slide">
+		<h2>wp-blog-header.php</h2>
+    <li class="delayed">
+      <code>wp_load.php</code>
+      <p>Sets the ABSPATH constant and loads the wp-config file.</p>
+    </li>
+    <li class="delayed">
+      <code>wp()</code>
+      <p>Makes sure The Loop is ready to go.</p>
+    </li>
+    <li class="delayed">
+      <code>template-loader.php</code>
+      <p>Loads the correct template based on the visitor's URL.</p>
+    </li>
 	</section>
 </section>
 
@@ -61,10 +84,6 @@
 		<h1>"..."</h1>
 	</header>
 	
-	<section class="slide">
-		<h2>wp-blog-header.php</h2>
-		<p>Slide content</p>
-	</section>
 </section>
 
 <section>
