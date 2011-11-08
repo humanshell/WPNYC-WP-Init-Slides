@@ -11,20 +11,17 @@
 }
 
 #intro .attribution {
-	font-family: Helvetica, sans-serif;
 	font-weight: bold;
-	text-align: center;
 	font-size: 100%;
 	line-height: .3;
 	color: rgba(0,0,0,.7);
 	text-shadow: none;
 	background-color: #fff;
-	padding:.6em 0 0;
-	overflow: hidden;
+	padding: .5em;
 }
 
 section > header.slide > h1 {
-  font-size: 200%;
+  font-size: 250%;
 }
 
 .slide p, .slide li {
