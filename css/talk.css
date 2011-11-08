@@ -1,13 +1,18 @@
 #intro {
-	background: rgba(0,0,0,.7);
+	background: rgba(0,0,0,.7) url(../img/intro-bg.png) no-repeat center;
+  background-size: 100%;
 	padding: 0;
 	border: 0;
 }
 
 #intro h1 {
+  background: url(../img/wp-logo.png) bottom right no-repeat;
 	width: 60%;
 	min-height: 500px;
 	margin: 5% auto 0;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 180%;
+	font-weight: 500;
 }
 
 #intro .attribution {
@@ -33,14 +38,3 @@ section > header.slide > h1 {
 	display: block;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio:0) {
-/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
-	object[type="image/svg+xml"] {
-		display: none;
-	}
-	
-	#intro h1 {
-		background: url(../img/wp-init-logo.png) no-repeat center;
-		background-size: 75% auto;
-	}
-}
