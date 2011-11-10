@@ -29,59 +29,94 @@
 	</header>
 	
 	<section class="slide">
-		<h2>Who am I?</h2>
-		<p>web://humanshell.net</p>
-		<p>twit://@human_shell</p>
-		<p>git://github.com/humanshell</p>
+    <h2>Who am I?</h2>
+    <pre><p>web://humanshell.net</p></pre><br />
+    <pre><p>twit://@human_shell</p></pre><br />
+    <pre><p>git://github.com/humanshell</p></pre><br />
 	</section>
 
 	<section class="slide">
-		<h2>What will we learn?</h2>
-		<p>Content</p>
+    <h2>What will we learn?</h2>
+    <ul>
+      <li>How does WordPress create its configuration environment?</li>
+      <li>Where does all of WordPress' core functionality come from?</li>
+      <li>How can we interact with this process in our themes and plugins?</li>
+    </ul>
 	</section>
 </section>
-
+  
 <section>
 	<header class="slide">
 		<h1>"In the beginning..."</h1>
 	</header>
 	
 	<section class="slide">
-		<h2>index.php</h2>
-    <li class="delayed">
-      <code>WP_USE_THEMES</code>
-      <p>Tells WordPress that your site should use the active theme to display the pages it’s serving.</p>
-    </li>
-    <li class="delayed">
-      <code>wp-blog-header.php</code>
-      <p>Checks to see if the variable $wp_did_header is set to true and if not continues the boot process.</p>
-    </li>
-	</section>
+    <h2>index.php</h2>
+    <ul>
+      <li class="delayed">
+        <code lang="javascript">WP_USE_THEMES</code>
+        <p>Tells WordPress that your site should use the active theme to display the pages it’s serving.</p>
+      </li>
+      <li class="delayed">
+        <code lang="javascript">wp-blog-header.php</code>
+        <p>Checks to see if the variable $wp_did_header is set to true and if not continues the boot process.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>WP_USE_THEMES</h2>
+    <p>If you are not displaying the content stored in WordPress or need to display it in a custom page on an existing site.</p><br />
+    <ul>
+      <li class="delayed">Add <code lang="javascript">define('WP_USE_THEMES', false);</code> to your wp-config.php</li><br />
+      <li class="delayed">Use the following code in an existing site to integrate WordPress.
+        <code lang="javascript">
+          &#60;?php
+            define('WP_USE_THEMES', false);
+            require('./wp-blog-header.php');
+          ?&#62;  
+        </code>
+      </li>
+    </ul>
+  </section>
 
 	<section class="slide">
-		<h2>wp-blog-header.php</h2>
-    <li class="delayed">
-      <code>wp_load.php</code>
-      <p>Sets the ABSPATH constant and loads the wp-config file.</p>
-    </li>
-    <li class="delayed">
-      <code>wp()</code>
-      <p>Makes sure The Loop is ready to go.</p>
-    </li>
-    <li class="delayed">
-      <code>template-loader.php</code>
-      <p>Loads the correct template based on the visitor's URL.</p>
-    </li>
+    <h2>wp-blog-header.php</h2>
+    <ul>
+      <li class="delayed">
+        <code lang="javascript">wp_load.php</code>
+        <p>Sets the ABSPATH constant and loads the wp-config file.</p>
+      </li>
+      <li class="delayed">
+        <code lang="javascript">wp()</code>
+        <p>Makes sure The Loop is ready to go.</p>
+      </li>
+      <li class="delayed">
+        <code lang="javascript">template-loader.php</code>
+        <p>Loads the correct template based on the visitor's URL.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>wp-load.php</h2>
+    <ul>
+      <li>Defines the <code>ABSPATH</code> variable</li>
+      <li>Locates and loads wp-config.php</li>
+      <li>Falls back on the create wp-config.php/install process</li>
+    </ul>
   </section>
 
   <section class="slide">
     <h2>wp-config.php</h2>
-    <li>MySQL settings</li>
-    <li>Authentication Unique Keys and Salts</li>
-    <li>Database Table prefix</li>
-    <li>Localized Language</li>
-    <li>WordPress debugging mode</li>
-    <li>Loads <code>wp-settings.php</code></li>
+    <ul>
+      <li>MySQL settings</li>
+      <li>Authentication Unique Keys and Salts</li>
+      <li>Database Table prefix</li>
+      <li>Localized Language</li>
+      <li>WordPress debugging mode</li>
+      <li>Loads <code>wp-settings.php</code></li>
+    </ul>
   </section>
 </section>
 
@@ -91,8 +126,14 @@
 	</header>
 	
 	<section class="slide">
-		<h2>wp-settings.php</h2>
-		<p>Slide content</p>
+    <h2>wp-settings.php</h2>
+    <ul>
+      <li>Responsible for ~90% of the initialization process</li>
+      <li>Defines WPINC constant</li>
+      <li>require()'s 56 files from /wp-includes</li>
+      <li>Executes ? individual functions</li>
+      <li>executes 7 action hooks</li>
+    </ul>
 	</section>
 </section>
 
@@ -107,8 +148,17 @@
 	</section>
 
 	<section class="slide">
-		<h2>template-loader.php</h2>
-		<p>Slide content</p>
+    <h2>template-loader.php</h2>
+    <ul>
+      <li>Runs the template_redirect action</li>
+      <li>Determines the type of visitor making the request</li>
+        <ul>
+          <li>Robot?</li>
+          <li>Feed?</li>
+          <li>Trackback?</li>
+        </ul>
+      <li>Determines the type of template to load (WP Template Hierarchy)</li>
+    </ul>
 	</section>
 </section>
 
@@ -118,17 +168,28 @@
 	</header>
 	
 	<section class="slide">
-		<h2>Slide title</h2>
-		<p>Slide content</p>
+    <h2>What did we learn?</h2>
+    <ul>
+      <li>How WordPress creates its configuration environment</li>
+      <li>Where all of WordPress' core functionality comes from</li>
+      <li>How we can interact with this process in our themes and plugins</li>
+    </ul>
 	</section>
 </section>
 
 <footer class="slide">
-	<h2>Thank you!</h2>
-	<p>Closing remarks</p>
+  <h2>Thank you!</h2>
+  <ul>
+    <li>Steve, the wpnyc.org meetup group and New Work City</li>
+    <li>@leaverou for creating CSSS: github.com/LeaVerou/CSSS</li>
+    <li>All of you!</li><br />
+  </ul>
+  <p></p>  <p>Slides: humanshell.github.com/WPNYC-WP-Init-Slides</p>
+  <p>Slides Repo: github.com/humanshell/WPNYC-WP-Init-Slides</p>
 </footer>
 
 <script src="js/slideshow.js"></script>
+<script src="plugins/code-highlight.js"></script>
 
 <!-- Make sure the reference to -prefix-free works -->
 <script src="js/prefixfree.min.js"></script>
