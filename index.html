@@ -16,7 +16,7 @@
 <link href="css/talk.css" rel="stylesheet" />
 
 </head>
-<body data-duration="60">
+<!-- <body data-duration="60"> -->
 
 <header id="intro" class="slide">
 	<h1>How WordPress Works:<br />The Boot Process</h1>
@@ -60,7 +60,7 @@
       </li>
       <li class="delayed">
         <code lang="javascript">wp-blog-header.php</code>
-        <p>Checks to see if the variable $wp_did_header is set to true and if not continues the boot process.</p>
+        <p>Responsible for continuing the boot process, preparring the WP Query object and loading the file that determines what template to use.</p>
       </li>
     </ul>
   </section>
@@ -104,7 +104,7 @@
     <ul>
       <li>Defines the <code>ABSPATH</code> variable</li>
       <li>Locates and loads wp-config.php</li>
-      <li>Falls back on the create wp-config.php/install process</li>
+      <li>Falls back on create wp-config.php process if not found</li>
     </ul>
   </section>
 
@@ -133,7 +133,7 @@
       <li>Defines WPINC constant</li>
       <li>require()'s 56 files from /wp-includes</li>
       <li>Executes ? individual functions</li>
-      <li>executes 7 action hooks</li>
+      <li>Executes 7 action hooks</li>
     </ul>
 	</section>
 
@@ -215,7 +215,7 @@
     <ul>
       <li>How WordPress creates its configuration environment</li>
       <li>Where all of WordPress' core functionality comes from</li>
-      <li>How we can interact with this process in our themes and plugins</li>
+      <li>How to interact with this process in themes and plugins</li>
     </ul>
 	</section>
 </section>
@@ -224,10 +224,14 @@
   <h2>Thank you!</h2>
   <ul>
     <li>Steve, the wpnyc.org meetup group and New Work City</li>
-    <li>@leaverou for creating CSSS: github.com/LeaVerou/CSSS</li>
+    <li>@leaverou for creating CSSS</li>
+    <ul>
+      <li>github.com/LeaVerou/CSSS</li>
+      <li>http://lea.verou.me</li>
+    </ul>
     <li>All of you!</li><br />
   </ul>
-  <p></p>  <p>Slides: humanshell.github.com/WPNYC-WP-Init-Slides</p>
+  <p>Slides: humanshell.github.com/WPNYC-WP-Init-Slides</p>
   <p>Slides Repo: github.com/humanshell/WPNYC-WP-Init-Slides</p>
 </footer>
 
