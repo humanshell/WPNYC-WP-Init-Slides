@@ -129,7 +129,7 @@
 	<section class="slide">
     <h2>wp-settings.php</h2>
     <ul>
-      <li>Responsible for ~90% of the initialization process</li>
+      <li>Responsible for ~90% of the boot process</li>
       <li>Defines WPINC constant</li>
       <li>require()'s 56 files from /wp-includes</li>
       <li>Executes ? individual functions</li>
@@ -138,42 +138,45 @@
 	</section>
 
 	<section class="slide">
-    <h2>Initialization...</h2>
+    <h2>1.) Initialization...</h2>
+    <ul>
+      <li>Defines <code>WPINC</code> constant</li>
+      <li>require() load.php, default-constants.php &amp; version.php</li>
+      <li>30 functions and 6 variables</li>
+      <li>Defines <code>WP_CACHE</code> constant</li>
+    </ul>
+	</section>
+
+	<section class="slide">
+    <h2>2.) Early WordPress Files...</h2>
     <ul>
       <li></li>
     </ul>
 	</section>
 
 	<section class="slide">
-    <h2>Early WordPress Files...</h2>
+    <h2>3.) Most of WordPress...</h2>
     <ul>
       <li></li>
     </ul>
 	</section>
 
 	<section class="slide">
-    <h2>Most of WordPress...</h2>
+    <h2>4.) </h2>
     <ul>
       <li></li>
     </ul>
 	</section>
 
 	<section class="slide">
-    <h2>Plugins, Taxanomies and Types...</h2>
+    <h2>5.) Core Classes...</h2>
     <ul>
       <li></li>
     </ul>
 	</section>
 
 	<section class="slide">
-    <h2>Core Classes...</h2>
-    <ul>
-      <li></li>
-    </ul>
-	</section>
-
-	<section class="slide">
-    <h2>The Final Stretch...</h2>
+    <h2>6.) The Final Stretch...</h2>
     <ul>
       <li></li>
     </ul>
