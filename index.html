@@ -143,42 +143,63 @@
       <li>Defines <code>WPINC</code> constant</li>
       <li>require() load.php, default-constants.php &amp; version.php</li>
       <li>30 functions and 6 variables</li>
-      <li>Defines <code>WP_CACHE</code> constant</li>
+      <li>Loads any advanced caching related plugins</li>
     </ul>
 	</section>
 
 	<section class="slide">
     <h2>2.) Early WordPress Files...</h2>
     <ul>
-      <li></li>
+      <li>Loads early core utility and class files</li>
+      <li>Creates the connection to the database</li>
+      <li>Defines most of the actions and filters for the hooks system</li>
+      <li>Begins Multisite setup if enabled</li>
+      <li>Checks to make sure WordPress is installed</li>
     </ul>
 	</section>
 
 	<section class="slide">
     <h2>3.) Most of WordPress...</h2>
     <ul>
-      <li></li>
+      <li>require()'s 36 WordPress core files</li>
+      <li>Loads more Multisite core files</li>
+      <li>Defines plugin directory constants</li>
+      <li>Loads Must Use plugins</li>
+      <li>Runs the first action hook</li>
     </ul>
 	</section>
 
 	<section class="slide">
-    <h2>4.) </h2>
+    <h2>4.) Plugins...</h2>
     <ul>
-      <li></li>
+      <li>Defines functionality, cookie and SSL related constants</li>
+      <li>Defines useful site and visitor specific variables</li>
+      <li>Creates initial taxonomies and post types</li>
+      <li>Registers the theme directory and loads plugins</li>
+      <li>Executes 2 more action hooks</li>
     </ul>
 	</section>
 
 	<section class="slide">
     <h2>5.) Core Classes...</h2>
     <ul>
-      <li></li>
+      <li>Creates the WP_Query class object</li>
+      <li>Creates the WP_Rewrite class object</li>
+      <li>Creates the WP class object</li>
+      <li>Creates the WP_Widget_Factory class object</li>
+      <li>Executes the 'setup_theme' action hook</li>
     </ul>
 	</section>
 
 	<section class="slide">
     <h2>6.) The Final Stretch...</h2>
     <ul>
-      <li></li>
+      <li>Defines constants for finding the template and default theme</li>
+      <li>Finishes loading the default locale and WP_Locale class</li>
+      <li>Loads the active theme's functions.php file</li>
+      <li>Executes the 'after_setup_theme' action hook</li>
+      <li>Sets up the current user</li>
+      <li>Executes the 'init' and 'wp_loaded' action hooks</li>
     </ul>
 	</section>
 </section>
@@ -189,8 +210,29 @@
 	</header>
 	
 	<section class="slide">
+    <h2>wp-blog-header.php</h2>
+    <ul>
+      <li>
+        <code lang="javascript">wp_load.php</code>
+        <p>Sets the ABSPATH constant and loads the wp-config file.</p>
+      </li>
+      <li class="delayed">
+        <code lang="javascript">wp()</code>
+        <p>Makes sure The Loop is ready to go.</p>
+      </li>
+      <li class="delayed">
+        <code lang="javascript">template-loader.php</code>
+        <p>Loads the correct template based on the visitor's URL.</p>
+      </li>
+    </ul>
+  </section>
+
+	<section class="slide">
 		<h2>The wp() function</h2>
-		<p>Slide content</p>
+    <ul>
+      <li>Calls the main() method in the WP class</li>
+      <li>Completes the setup of the WordPress environment</li>
+    </ul>
 	</section>
 
 	<section class="slide">
